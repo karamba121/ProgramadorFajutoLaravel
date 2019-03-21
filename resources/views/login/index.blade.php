@@ -3,5 +3,7 @@
 @section('title', 'title')
 
 @section('content')
-    <div class="teste">login controller</div>
+<div id="content">
+        <div class="teste">login controller</div>
+    </div>
 @endsection
