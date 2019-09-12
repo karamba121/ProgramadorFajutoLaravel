@@ -1,66 +1,92 @@
-@extends('shared.layout') 
-@section('title', 'title') 
+@extends('shared.layout')
+@section('title', 'title')
 @section('content')
 <div id="content">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <section class="white">
-                    <div class="post-cabecalho">
-                        <ul>
-                            <li class="tag-cabecalho">
-                                <h1 class="center-block"></h1>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="conteudo">
-                        <h3 class="text-uppercase"><b></b></h3>
-                    </div>
-                    <div class="conteudo">
-                        <span class="opacity">em </span>, por @post.Autor.Nome
-                    </div>
-                    <div class="conteudo">
-                        <h5></h5>
-                    </div>
-                    <div class="conteudo">
 
-                    </div>
-                    <div class="conteudo">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <a class="button text-capitalize" href=""><b>Continue lendo</b></a>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <h3 class="pull-right"><b>Comentarios</b><span class="tag"></span></h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <div class="conteudo text-center">
-                    <a href="">
-                        <</a>
-                            <a href="">></a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <section class="white">
-                    <div class="conteudo cinza">
-                        <h4>Posts mais populares</h4>
-                    </div>
-                    <ul>
-                        <li class="conteudo">
-                            <a href="">
-                                    <img src="{{ asset('img/designer.jpg') }}" alt="" class="img-responsive rounded-circle" />
-                                    <span></span><br />
-                                    <span>
-                                            <i class="tag"></i>
-                                    </span>
-                                </a>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-        </div>
+        <pre>
+            <code>
+                namespace App\Console;
+                
+                use Illuminate\Console\Scheduling\Schedule;
+                use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+                
+                class Kernel extends ConsoleKernel
+                {
+                    /**
+                     * The Artisan commands provided by your application.
+                     *
+                     * @var array
+                     */
+                    protected $commands = [
+                        //
+                    ];
+                
+                    /**
+                     * Define the application's command schedule.
+                     *
+                     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+                     * @return void
+                     */
+                    protected function schedule(Schedule $schedule)
+                    {
+                        // $schedule->command('inspire')
+                        //          ->hourly();
+                    }
+                
+                    /**
+                     * Register the commands for the application.
+                     *
+                     * @return void
+                     */
+                    protected function commands()
+                    {
+                        $this->load(__DIR__.'/Commands');
+                
+                        require base_path('routes/console.php');
+                    }
+                }
+        </code>
+    </pre>
     </div>
+
+    {{-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{{ asset('img/header_one.jpg')}}" alt="Primeiro Slide">
+    <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
+    </div>
+</div>
+<div class="carousel-item">
+    <img class="d-block w-100" src="{{ asset('img/header_two.jpg')}}" alt="Segundo Slide">
+    <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
+    </div>
+</div>
+<div class="carousel-item">
+    <img class="d-block w-100" src="{{ asset('img/rabbit.gif')}}" alt="Terceiro Slide">
+    <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
+    </div>
+</div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+</a>
+</div> --}}
 </div>
 @endsection
